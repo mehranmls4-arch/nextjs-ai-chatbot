@@ -1,6 +1,10 @@
 'use client';
 
-export function HeroSection() {
+interface HeroSectionProps {
+  setSelectedBranch: (branch: string) => void;
+}
+
+export default function HeroSection({ setSelectedBranch }: HeroSectionProps) {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-black to-gray-950">
       {/* Background image overlay */}
@@ -23,31 +27,29 @@ export function HeroSection() {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight text-balance">
-            Experience Premium
+            <span className="text-orange-500">BIG PAN</span> FOODS
             <br />
-            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
-              Fast Food
-            </span>
+            <span className="text-3xl md:text-5xl font-normal text-gray-300">Premium Fast Food Delivery</span>
           </h1>
 
           {/* Subheading text */}
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto text-balance">
-            Freshly prepared using premium ingredients, hygienic preparation, and lightning-fast delivery. Experience the taste that defines excellence.
+            We deliver across 5 cities in Pakistan with 6 branches. Free delivery within city limits. Late-night cravings? We've got you covered with extended delivery hours.
           </p>
 
           {/* Trust badges */}
           <div className="flex flex-wrap gap-4 justify-center text-sm md:text-base">
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/40 border border-gray-700">
-              <span className="text-yellow-400">✓</span>
-              <span className="text-gray-300">Fresh Daily</span>
+              <span className="text-orange-400">⭐</span>
+              <span className="text-gray-300">Rated 4.6+</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/40 border border-gray-700">
-              <span className="text-yellow-400">✓</span>
-              <span className="text-gray-300">Premium Quality</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/40 border border-gray-700">
-              <span className="text-yellow-400">✓</span>
+              <span className="text-orange-400">🚚</span>
               <span className="text-gray-300">Fast Delivery</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/40 border border-gray-700">
+              <span className="text-orange-400">❤️</span>
+              <span className="text-gray-300">Family Favorite</span>
             </div>
           </div>
 

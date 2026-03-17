@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export function Navigation() {
+export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
