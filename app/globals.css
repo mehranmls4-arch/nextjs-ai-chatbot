@@ -50,41 +50,41 @@
   --sidebar: hsl(0 0% 98%);
 }
 
-/* define design tokens (dark mode) */
+/* define design tokens (dark mode) - Premium Luxury Big Pan Foods */
 .dark {
-  --background: hsl(240 10% 3.9%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(240 10% 3.9%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(240 10% 3.9%);
-  --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(240 5.9% 10%);
-  --secondary: hsl(240 3.7% 15.9%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(240 3.7% 15.9%);
-  --muted-foreground: hsl(240 5% 64.9%);
-  --accent: hsl(240 3.7% 15.9%);
-  --accent-foreground: hsl(0 0% 98%);
+  --background: hsl(0 0% 6.3%);
+  --foreground: hsl(40 10% 96.9%);
+  --card: hsl(0 0% 10.2%);
+  --card-foreground: hsl(40 10% 96.9%);
+  --popover: hsl(0 0% 10.2%);
+  --popover-foreground: hsl(40 10% 96.9%);
+  --primary: hsl(0 85% 24.3%);
+  --primary-foreground: hsl(40 10% 96.9%);
+  --secondary: hsl(21 100% 36.5%);
+  --secondary-foreground: hsl(40 10% 96.9%);
+  --muted: hsl(0 0% 16.5%);
+  --muted-foreground: hsl(40 5% 67.1%);
+  --accent: hsl(45 88% 52%);
+  --accent-foreground: hsl(0 0% 6.3%);
   --destructive: hsl(0 62.8% 30.6%);
   --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(240 3.7% 15.9%);
-  --input: hsl(240 3.7% 15.9%);
-  --ring: hsl(240 4.9% 83.9%);
-  --chart-1: hsl(220 70% 50%);
-  --chart-2: hsl(160 60% 45%);
-  --chart-3: hsl(30 80% 55%);
-  --chart-4: hsl(280 65% 60%);
-  --chart-5: hsl(340 75% 55%);
-  --sidebar-background: hsl(240 5.9% 10%);
-  --sidebar-foreground: hsl(240 4.8% 95.9%);
-  --sidebar-primary: hsl(224.3 76.3% 48%);
-  --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(240 3.7% 15.9%);
-  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-  --sidebar-border: hsl(240 3.7% 15.9%);
-  --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  --sidebar: hsl(240 5.9% 10%);
+  --border: hsl(0 0% 16.5%);
+  --input: hsl(0 0% 16.5%);
+  --ring: hsl(45 88% 52%);
+  --chart-1: hsl(0 85% 24.3%);
+  --chart-2: hsl(21 100% 36.5%);
+  --chart-3: hsl(45 88% 52%);
+  --chart-4: hsl(40 10% 96.9%);
+  --chart-5: hsl(0 0% 16.5%);
+  --sidebar-background: hsl(0 0% 10.2%);
+  --sidebar-foreground: hsl(40 10% 96.9%);
+  --sidebar-primary: hsl(0 85% 24.3%);
+  --sidebar-primary-foreground: hsl(40 10% 96.9%);
+  --sidebar-accent: hsl(21 100% 36.5%);
+  --sidebar-accent-foreground: hsl(40 10% 96.9%);
+  --sidebar-border: hsl(0 0% 16.5%);
+  --sidebar-ring: hsl(45 88% 52%);
+  --sidebar: hsl(0 0% 10.2%);
 }
 
 /* define theme */
@@ -314,5 +314,57 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Premium Big Pan Foods Styling */
+@layer utilities {
+  .glass {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(196, 30, 58, 0.15);
+  }
+
+  .premium-shadow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .premium-shadow-sm {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .premium-shadow-lg {
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+  }
+
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7);
+  }
+
+  .brand-gradient {
+    background: linear-gradient(135deg, hsl(0 85% 24.3%) 0%, hsl(21 100% 36.5%) 100%);
+  }
+
+  .gold-accent {
+    color: hsl(45 88% 52%);
+  }
+
+  .cream-text {
+    color: hsl(40 10% 96.9%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }

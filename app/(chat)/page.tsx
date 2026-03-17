@@ -1,52 +1,27 @@
-import { cookies } from "next/headers";
-import { Suspense } from "react";
-import { Chat } from "@/components/chat";
-import { DataStreamHandler } from "@/components/data-stream-handler";
-import { DEFAULT_CHAT_MODEL } from "@/lib/ai/models";
-import { generateUUID } from "@/lib/utils";
+import { Navigation } from "@/components/landing/navigation";
+import { HeroSection } from "@/components/landing/hero-section";
+import { FeaturedMenu } from "@/components/landing/featured-menu";
+import { FeaturesSection } from "@/components/landing/features-section";
+import { DealsSection } from "@/components/landing/deals-section";
+import { ReviewsSection } from "@/components/landing/reviews-section";
+import { AboutSection } from "@/components/landing/about-section";
+import { ContactSection } from "@/components/landing/contact-section";
+import { Footer } from "@/components/landing/footer";
 
 export default function Page() {
   return (
-    <Suspense fallback={<div className="flex h-dvh" />}>
-      <NewChatPage />
-    </Suspense>
-  );
-}
-
-async function NewChatPage() {
-  const cookieStore = await cookies();
-  const modelIdFromCookie = cookieStore.get("chat-model");
-  const id = generateUUID();
-
-  if (!modelIdFromCookie) {
-    return (
-      <>
-        <Chat
-          autoResume={false}
-          id={id}
-          initialChatModel={DEFAULT_CHAT_MODEL}
-          initialMessages={[]}
-          initialVisibilityType="private"
-          isReadonly={false}
-          key={id}
-        />
-        <DataStreamHandler />
-      </>
-    );
-  }
-
-  return (
-    <>
-      <Chat
-        autoResume={false}
-        id={id}
-        initialChatModel={modelIdFromCookie.value}
-        initialMessages={[]}
-        initialVisibilityType="private"
-        isReadonly={false}
-        key={id}
-      />
-      <DataStreamHandler />
-    </>
+    <main className="w-full bg-black">
+      <Navigation />
+      <div className="pt-16">
+        <HeroSection />
+        <FeaturedMenu />
+        <FeaturesSection />
+        <DealsSection />
+        <ReviewsSection />
+        <AboutSection />
+        <ContactSection />
+        <Footer />
+      </div>
+    </main>
   );
 }
